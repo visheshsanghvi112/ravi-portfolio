@@ -13,20 +13,6 @@
             "VITE_GEMINI_API_KEY": "@gemini_api_key"
         }
     },
-    "routes": [
-        {
-            "src": "/robots.txt",
-            "dest": "/robots.txt"
-        },
-        {
-            "src": "/site.webmanifest",
-            "dest": "/site.webmanifest"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.html"
-        }
-    ],
     "headers": [
         {
             "source": "/(.*)",
