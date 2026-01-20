@@ -3,12 +3,13 @@ import { Instagram, Mail, Phone, Menu, X, ArrowRight, Camera, Star, ChevronLeft,
 import { Button, SectionTitle } from './components/Shared';
 import { AIStudio } from './components/AIStudio';
 import { ChatBot } from './components/ChatBot';
-import { PLACEHOLDER_IMAGES } from './constants';
+import { PLACEHOLDER_IMAGES, HERO_IMAGES } from './constants';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [heroIndex, setHeroIndex] = useState(0);
 
   // Navigation Items Config
   const NAV_ITEMS = [
@@ -34,6 +35,14 @@ function App() {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Hero Slideshow Timer
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(interval);
   }, []);
 
   // Prevent scroll when mobile menu or lightbox is open
@@ -148,12 +157,23 @@ function App() {
 
       {/* --- Hero Section --- */}
       <header className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Cinematic Background */}
-        <div className="absolute inset-0 z-0">
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center animate-slow-zoom opacity-50"></div>
-             {/* Gradient Overlays for readability */}
-             <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-obsidian/30"></div>
-             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#050505_120%)]"></div>
+        {/* Cinematic Background Slideshow */}
+        <div className="absolute inset-0 z-0 bg-obsidian">
+             {HERO_IMAGES.map((img, i) => (
+               <div 
+                  key={i}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === heroIndex ? 'opacity-100' : 'opacity-0'}`}
+               >
+                  <div 
+                      className="absolute inset-0 bg-cover bg-center animate-slow-zoom opacity-60" 
+                      style={{ backgroundImage: `url('${img}')` }}
+                  ></div>
+               </div>
+             ))}
+             
+             {/* Gradient Overlays for readability - Lighter overlay for better visibility */}
+             <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent"></div>
+             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,#050505_100%)] opacity-80"></div>
         </div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20">

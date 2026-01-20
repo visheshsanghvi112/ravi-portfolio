@@ -10,6 +10,15 @@ export const MODELS = {
   FAST: 'gemini-2.5-flash-lite',
 };
 
+// Cinematic backgrounds for the Hero slideshow
+export const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070&auto=format&fit=crop", // The classic mountain shot
+  "https://images.unsplash.com/photo-1511285560982-1356c11d4606?q=80&w=2000&auto=format&fit=crop", // Wedding couple
+  "https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=2000&auto=format&fit=crop", // Editorial/Fashion
+  "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop", // B&W Texture
+  "https://images.unsplash.com/photo-1621600411688-4be93cd68504?q=80&w=2000&auto=format&fit=crop"  // Golden hour solo
+];
+
 // Curated high-end photography for portfolio with varying aspect ratios for Masonry layout
 export const PLACEHOLDER_IMAGES = [
   "https://images.unsplash.com/photo-1511285560982-1356c11d4606?q=80&w=800&h=1200&auto=format&fit=crop", // Portrait
