@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ravi-maurya-portfolio.vercel.app/sitemap.xml

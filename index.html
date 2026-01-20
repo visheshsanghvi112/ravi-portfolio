@@ -1,64 +1,109 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ravi Maurya | Visual Artist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              obsidian: '#050505',
-              charcoal: '#0F0F11',
-              surface: '#18181B',
-              gold: {
-                100: '#F9F1D8',
-                300: '#EAD598',
-                400: '#D4AF37', // Base
-                500: '#C59D24',
-                600: '#A17F16',
-                900: '#423306',
-              },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Ravi Maurya | Visual Artist & Professional Photographer</title>
+  <meta name="title" content="Ravi Maurya | Visual Artist & Professional Photographer" />
+  <meta name="description"
+    content="Professional photography services specializing in weddings, portraits, events, and commercial photography. Capturing moments that tell your story with artistic excellence." />
+  <meta name="keywords"
+    content="photography, photographer, wedding photography, portrait photography, event photography, commercial photography, visual artist, professional photographer" />
+  <meta name="author" content="Ravi Maurya" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ravi-maurya-portfolio.vercel.app/" />
+  <meta property="og:title" content="Ravi Maurya | Visual Artist & Professional Photographer" />
+  <meta property="og:description"
+    content="Professional photography services specializing in weddings, portraits, events, and commercial photography." />
+  <meta property="og:image" content="https://ravi-maurya-portfolio.vercel.app/icon-512x512.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ravi-maurya-portfolio.vercel.app/" />
+  <meta property="twitter:title" content="Ravi Maurya | Visual Artist & Professional Photographer" />
+  <meta property="twitter:description"
+    content="Professional photography services specializing in weddings, portraits, events, and commercial photography." />
+  <meta property="twitter:image" content="https://ravi-maurya-portfolio.vercel.app/icon-512x512.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
+  <link rel="apple-touch-icon" href="/icon-512x512.png" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#D4AF37" />
+  <meta name="msapplication-TileColor" content="#050505" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#050505',
+            charcoal: '#0F0F11',
+            surface: '#18181B',
+            gold: {
+              100: '#F9F1D8',
+              300: '#EAD598',
+              400: '#D4AF37', // Base
+              500: '#C59D24',
+              600: '#A17F16',
+              900: '#423306',
             },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            'gold-gradient': 'linear-gradient(135deg, #F9F1D8 0%, #D4AF37 50%, #A17F16 100%)',
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            'slow-zoom': 'slowZoom 20s linear infinite alternate',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
             },
-            backgroundImage: {
-              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-              'gold-gradient': 'linear-gradient(135deg, #F9F1D8 0%, #D4AF37 50%, #A17F16 100%)',
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
             },
-            animation: {
-              'fade-in': 'fadeIn 1s ease-out forwards',
-              'slide-up': 'slideUp 0.8s ease-out forwards',
-              'slow-zoom': 'slowZoom 20s linear infinite alternate',
-              'float': 'float 6s ease-in-out infinite',
+            slowZoom: {
+              '0%': { transform: 'scale(1)' },
+              '100%': { transform: 'scale(1.1)' },
             },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              slowZoom: {
-                '0%': { transform: 'scale(1)' },
-                '100%': { transform: 'scale(1.1)' },
-              },
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              }
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
             }
           }
         }
       }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    }
+  </script>
   <script type="importmap">
 {
   "imports": {
@@ -70,32 +115,40 @@
   }
 }
 </script>
-<style>
-  /* Custom Scrollbar */
-  html {
-    scroll-padding-top: 100px; /* Ensures header doesn't cover content when scrolling to ID */
-  }
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #050505; 
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #333; 
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #D4AF37; 
-  }
-  .glass-panel {
-    background: rgba(24, 24, 27, 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-</style>
+  <style>
+    /* Custom Scrollbar */
+    html {
+      scroll-padding-top: 100px;
+      /* Ensures header doesn't cover content when scrolling to ID */
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #050505;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+
+    .glass-panel {
+      background: rgba(24, 24, 27, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
 </head>
-  <body class="bg-obsidian text-gray-200 font-sans antialiased selection:bg-gold-400 selection:text-black">
-    <div id="root"></div>
-  </body>
+
+<body class="bg-obsidian text-gray-200 font-sans antialiased selection:bg-gold-400 selection:text-black">
+  <div id="root"></div>
+</body>
+
 </html>

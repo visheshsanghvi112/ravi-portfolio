@@ -36,3 +36,30 @@ export enum VideoResolution {
   RES_720P = "720p",
   RES_1080P = "1080p"
 }
+
+// Type declarations for window and process
+declare global {
+  interface Window {
+    aistudio?: {
+      hasSelectedApiKey?: () => Promise<boolean>;
+      openSelectKey?: () => Promise<void>;
+    };
+  }
+
+  namespace NodeJS {
+    interface ProcessEnv {
+      API_KEY?: string;
+      GEMINI_API_KEY?: string;
+      VITE_GEMINI_API_KEY?: string;
+    }
+  }
+
+  var process: {
+    env: NodeJS.ProcessEnv;
+    stdout: {
+      write: (str: string) => void;
+    };
+  };
+}
+
+export { };

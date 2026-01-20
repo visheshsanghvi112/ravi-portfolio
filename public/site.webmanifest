@@ -1,0 +1,24 @@
+{
+    "name": "Ravi Maurya - Visual Artist",
+    "short_name": "Ravi Maurya",
+    "description": "Professional photography portfolio showcasing wedding, portrait, event, and commercial photography by Ravi Maurya",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "theme_color": "#D4AF37",
+    "background_color": "#050505",
+    "display": "standalone",
+    "start_url": "/",
+    "orientation": "portrait-primary"
+}
