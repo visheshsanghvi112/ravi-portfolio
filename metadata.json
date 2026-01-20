@@ -1,0 +1,9 @@
+{
+  "name": "Ravi Maurya - Lens & Lumina",
+  "description": "A premium creative portfolio for Ravi Maurya, featuring AI-powered tools for photography workflows including image generation, editing, and video creation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
