@@ -54,12 +54,14 @@ declare global {
     }
   }
 
-  var process: {
+  interface Process {
     env: NodeJS.ProcessEnv;
-    stdout: {
+    stdout?: {
       write: (str: string) => void;
     };
-  };
+  }
+
+  var process: Process;
 }
 
 export { };
